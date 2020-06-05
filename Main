@@ -1,0 +1,23 @@
+public class Main {
+    public static void main(String[] args) {
+        MyArrayList<Integer> i = new MyArrayList<>();
+
+        i.add(4);
+        i.add(8);
+
+        System.out.println(i.get(0));
+        i.del(0);
+        System.out.println(i.get(0));
+
+        MyArrayList<String> s = new MyArrayList<>();
+
+        s.add("Alex");
+        s.add("Kate");
+        s.add("Oleg");
+        System.out.println(s);
+        s.del(1);
+        System.out.println(s);
+
+        System.out.println(s.size());
+    }
+}
