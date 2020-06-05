@@ -1,0 +1,40 @@
+import java.util.Arrays;
+public class MyArrayList<E> {
+
+    private E[] values;
+
+    public MyArrayList(){
+        values = (E[]) new Object[0];
+    }
+
+    public void add(E e){
+        E[] temp = values;
+        values = (E[]) new Object[temp.length +1];
+        System.arraycopy(temp, 0,values,0, temp.length);
+        values[values.length - 1] = e;
+
+    }
+    public void del(int index){
+        E[] temp = values;
+        values = (E[]) new Object[temp.length -1];
+        System.arraycopy(temp,0,values,0,index);
+        int capacityAfterIndex = temp.length - index -1;
+        System.arraycopy(temp, index +1, values, index,capacityAfterIndex);
+    }
+
+
+    public E get(int index){
+        return values[index];
+    }
+
+    public int size(){
+        return values.length;
+    }
+
+    @Override
+    public String toString() {
+        return "MyArrayList{" +
+                "values=" + Arrays.toString(values) +
+                '}';
+    }
+}
